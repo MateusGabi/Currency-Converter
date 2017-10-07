@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Converter from './Converter';
 import Navbar from './Navbar';
@@ -21,7 +20,6 @@ class App extends Component {
     fetch("http://mgm-currency-converter.herokuapp.com/")
       .then(result => result.json())
       .then(items => {
-        console.log(items);
         this.setState({ latest: items, currencies: Object.keys(items.rates) });
       });
   }

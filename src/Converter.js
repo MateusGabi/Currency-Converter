@@ -54,7 +54,6 @@ class Converter extends Component {
         fetch(url)
             .then(result => result.json())
             .then(items => {
-                console.log(items);
                 this.setState({ converted: 'is $' + items.value + ' ' + this.state.to});
             });
 
