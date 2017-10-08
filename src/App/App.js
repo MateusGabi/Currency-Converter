@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Converter from './Converter';
-import Navbar from './Navbar';
+import Converter from '../Converter/Converter';
+import Navbar from '../Navbar/Navbar';
 
 class App extends Component {
 
