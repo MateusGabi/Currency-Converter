@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Converter.css';
 
 class Converter extends Component {
 
@@ -104,7 +105,7 @@ class Converter extends Component {
 
                     <hr />
                     
-                    <input class="btn btn-primary btn-flat" type="submit" value="Convert" />
+                    <input class="Button-convert btn btn-primary btn-flat" type="submit" value="Convert" />
                 </form>
 
                         <br /><br />
