@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Converter.css';
+import Service from '../APIService/Service';
 
 class Converter extends Component {
 
@@ -50,14 +51,7 @@ class Converter extends Component {
             return;
         }
 
-        var url = "http://mgm-currency-converter.herokuapp.com/go?value="+ v +"&from="+ f +"&to="+ t;
-
-        fetch(url)
-            .then(result => result.json())
-            .then(items => {
-                this.setState({ converted: 'is $' + items.value + ' ' + this.state.to});
-            });
-
+        Service.convert(v, f, t).then(items => this.setState({ converted: 'is $' + items.value + ' ' + this.state.to}));
 
         event.preventDefault();
     }
