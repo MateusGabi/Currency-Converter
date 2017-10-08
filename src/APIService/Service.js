@@ -5,11 +5,18 @@ class Service extends Component {
     /**
      * return a Promise within API info
      */
-    static getLatest() : Promise<any> {        
+    static getLatest() {        
         return fetch("http://mgm-currency-converter.herokuapp.com/").then(result => result.json());
     }
 
-    static convert(value: number, from: string, to: string) : Promise<number> {
+    /**
+     * Convert a value from one currency to another. Value should be in double format (eg: 123.45). From and To should be one currency of the list.
+     * 
+     * @param {string} value - value to be converted
+     * @param {string} from - origin currency
+     * @param {string} to - another currency
+     */
+    static convert(value, from, to) {
         return fetch("http://mgm-currency-converter.herokuapp.com/go?value="+ value +"&from="+ from +"&to="+ to).then(result => result.json());
     }
 
